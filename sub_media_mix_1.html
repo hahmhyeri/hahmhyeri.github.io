@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Gugi|Nanum+Gothic|Nanum+Myeongjo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet">
+   
+    <style>
+        .menu {
+            font-family: 'Kavivanar', cursive;
+            color: white;
+            font-size: 20px;
+        }
+
+        #content {
+            font-family: 'Gugi', cursive;
+            font-size: 40px;
+            position: relative;
+            text-align: center;
+        }
+        #list {
+            position: absolute;
+            top: 23%;
+            left: 13%;
+        }
+        
+
+        /*
+            #main_footer {
+            width: 960px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid black;
+
+            text-align: center;
+        }
+
+        */
+
+    </style>
+    <script language="javascript">
+
+        function open_soft() {
+            document.getElementById("sub_soft").style.display = "block";
+        }
+
+        function close_soft() {
+            var ex = document.getElementById("sub_soft");
+            if (ex.contains(event.toElement) == false) {
+                document.getElementById("sub_soft").style.display = "none";
+            }
+        }
+
+        function open_media() {
+            document.getElementById("sub_media").style.display = "block";
+        }
+
+        function close_media() {
+            var ex = document.getElementById("sub_media");
+            if (ex.contains(event.toElement) == false) {
+                document.getElementById("sub_media").style.display = "none";
+            }
+
+        }
+
+    </script>
+    <title></title>
+</head>
+<body>
+
+    <center>
+        <img src="img_banner.png">
+    </center>
+    <canvas width="1000" height="510" align="center" style="border: 2px solid  black; position: absolute; margin-top: 5%; margin-left: 17.3%; ">  </canvas>
+    <div class="menu">
+        <a href="home.html"> <img id="img_home" src="img_home.png" style="position: absolute; top: 18%; left: 23.5%" onmouseover='this.src="img_home2.png"' onmouseout='this.src="img_home.png"' /></a>
+        <a onmousedown="open_soft();"><img id="img_soft" style="position: absolute; top: 18%; left: 39%;" src="img_soft.png" onmouseover='this.src="img_soft2.png"' onmouseout='this.src="img_soft.png"' /></a>
+        <a onmousedown="open_media();"><img id="img_media" style="position: absolute; top: 18%; left: 57%;" src="img_media.png" onmouseover='this.src="img_media2.png"' onmouseout='this.src="img_media.png"' /></a>
+        <a href="etc.html"><img id="img_etc" style="position: absolute; top: 18%; left: 72.9%;" src="img_etc.png" onmouseover='this.src="img_etc2.png"' onmouseout='this.src="img_etc.png"' /></a>
+    </div>
+    <img id="img_heart" style="position: absolute; left: 58.8%; top: 112px;" src="img_heart.png" />
+    <!-- 3차때 jquery $().fadeToggle로 메뉴 서서히 사라지게 하기-->
+    <div id="sub_soft" style="display: none;" onmouseout="close_soft();">
+        <a href="sub_soft.html"><img id="soft_1" src="soft_1.png" style="position: absolute; top: 22.5%; left: 38.8%;" onmouseover='this.src="soft_1_2.png"' onmouseout='this.src="soft_1.png"' /></a>
+        <img id="soft_2" src="soft_2.png" style="position: absolute; top: 27%; left: 38.8%;" onmouseover='this.src="soft_2_2.png"' onmouseout='this.src="soft_2.png"' onclick="alert('준비중');" />
+        <img id="soft_3" src="soft_3.png" style="position: absolute; top: 31.5%; left: 38.8%;" onmouseover='this.src="soft_3_2.png"' onmouseout='this.src="soft_3.png"' onclick="alert('준비중');" />
+        <img id="soft_4" src="soft_4.png" style="position: absolute; top: 36%; left: 38.8%;" onmouseover='this.src="etc_2.png"' onmouseout='this.src="soft_4.png"' onclick="alert('준비중');" />
+    </div>
+    <div id="sub_media" style="display: none;" onmouseout="close_media();">
+        <a href="sub_media_mix_1.html"><img id="media_1" src="media_1.png" style="position: absolute; top: 22.5%; left: 55.8%;" onmouseover='this.src="media_1_2.png"' onmouseout='this.src="media_1.png"' /> </a>
+        <img id="media_2" src="media_2.png" style="position: absolute; top: 27%; left: 55.8%;" onmouseover='this.src="media_2_2.png"' onmouseout='this.src="media_2.png"' onclick="alert('준비중');" />
+        <a href="sub_media_etc.html"><img id="media_3" src="media_3.png" style="position: absolute; top: 31.5%; left: 55.8%;" onmouseover='this.src="media_3_2.png"' onmouseout='this.src="media_3.png"' /></a>
+
+    </div>
+
+    <nav id="list">
+        <dl>
+            <dd> <a href="sub_media_mix_1.html" style="text-decoration: none; color: black; font-family: 'Gugi', cursive;"><b>1</b></a></dd>
+            <dd>&nbsp;</dd>
+            <dd> <a href="sub_media_mix_2.html" style="text-decoration: none; color: darkgray; font-family: 'Gugi', cursive;"><b>2</b></a></dd>
+            <dd>&nbsp;</dd>
+            <dd> <a href="sub_media_mix_3.html" style="text-decoration: none; color: darkgray;; font-family: 'Gugi', cursive;"><b>3</b></a></dd>
+        </dl>
+    </nav>
+    <center style="font-family: 'Gugi', cursive; ">
+        <iframe style="text-align: center; margin-top: 8.5%;" width="560" height="315" src="https://www.youtube.com/embed/GMtwibbT5iM?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p><span style="font-size: 30px; border: hidden; background-color: pink; color:white;"> 트와이스(Twice) - What is love? </span></p>
+        <p style="font-size: 20px;"> 업로드일: 2018.04.21</p>
+    </center>
+</body>
+</html>

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Gugi|Nanum+Gothic|Nanum+Myeongjo|Hi+Melody" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet">
+    
+    <style>
+        .menu {
+            font-family: 'Kavivanar', cursive;
+            color: white;
+            font-size: 20px;
+        }
+
+        #content {
+            font-family: 'Gugi', cursive;
+            font-size: 40px;
+            position: relative;
+            text-align: center;
+        }
+
+        /*
+            #main_footer {
+            width: 960px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid black;
+
+            text-align: center;
+        }
+
+        */
+
+    </style>
+    <script language="javascript">
+
+        function open_soft() {
+            document.getElementById("sub_soft").style.display = "block";
+        }
+
+        function close_soft() {
+            var ex = document.getElementById("sub_soft");
+            if (ex.contains(event.toElement) == false) {
+                document.getElementById("sub_soft").style.display = "none";
+            }
+        }
+
+        function open_media() {
+            document.getElementById("sub_media").style.display = "block";
+        }
+
+        function close_media() {
+            var ex = document.getElementById("sub_media");
+            if (ex.contains(event.toElement) == false) {
+                document.getElementById("sub_media").style.display = "none";
+            }
+
+        }
+
+    </script>
+    <title></title>
+</head>
+<body>
+    <center>
+        <img src="img_banner.png">
+    </center>
+
+    <canvas width="1000" height="510" align="center" style="border: 2px solid  black; margin-top: 5%; margin-left: 17.3%;">  </canvas>
+
+    <div class="menu">
+        <a href="home.html"> <img id="img_home" src="img_home.png" style="position: absolute; top: 18%; left: 23.5%" onmouseover='this.src="img_home2.png"' onmouseout='this.src="img_home.png"'/></a>
+        <a onmousedown="open_soft();"><img id="img_soft" style="position: absolute; top: 18%; left: 39%;" src="img_soft.png" onmouseover='this.src="img_soft2.png"' onmouseout='this.src="img_soft.png"'/></a>
+        <a onmousedown="open_media();"><img id="img_media" style="position: absolute; top: 18%; left: 57%;" src="img_media.png" onmouseover='this.src="img_media2.png"' onmouseout='this.src="img_media.png"'/></a>
+        <a href="etc.html"><img id="img_etc" style="position: absolute; top: 18%; left: 72.9%;" src="img_etc.png" onmouseover='this.src="img_etc2.png"' onmouseout='this.src="img_etc.png"'/></a>
+    </div>
+    <img id="img_heart" style="position: absolute; left: 41.7%; top: 112px;" src="img_heart.png" />
+
+    <!-- 아래 이미지 클릭시 jquery의 Lightbox를 통해 정보를 보여줄 예정 (현재는 파일 다운로드 > 프로젝트에 사용된 언어, 만든 날짜, 프로젝트 내용, 맡은 역할 등) -->
+    <a href="http://attach.mail.daum.net/bigfile/v1/urls/d/3lrasB2L1kTv7MM0yta-Wy1T_wo/8P6hCjhy2JZVDBs1NaEl7g"><img src="project_b_1.png" onmouseover='this.src="project_b_2.png"' onmouseout='this.src="project_b_1.png"' style="position: absolute; left: 20%; top: 28%; width:200px; height: auto;" /> </a>
+    <div style="font-family: 'Nanum Myeongjo', serif; position: absolute; top: 56%; left: 21.1%; text-align: center;">2017-1 고급프로그래밍<br />오늘 뭐 먹지?</div>
+    <a href="http://attach.mail.daum.net/bigfile/v1/urls/d/Aut31hO4HiAkq8OGeckqk5hLQaw/8P6hCjhy2JbGuTXHiwhcRw"><img src="project_a_1.png" onmouseover='this.src="project_a_2.png"' onmouseout='this.src="project_a_1.png"' style="position: absolute; width: 200px; left: 37%; top: 28%;  height: auto;" /></a>
+    <div style="font-family: 'Nanum Myeongjo', serif; position: absolute; top: 56%; left: 37.2%; text-align: center;">2018-1 응용소프트웨어실습<br />Escape from assignment</div>
+
+    <!-- 3차때 jquery $().fadeToggle로 메뉴 서서히 사라지게 하기-->
+    <div id="sub_soft" style="display: none;" onmouseout="close_soft();">
+        <a href="sub_soft.html"><img id="soft_1" src="soft_1.png" style="position: absolute; top: 22.5%; left: 38.8%;" onmouseover='this.src="soft_1_2.png"' onmouseout='this.src="soft_1.png"' /></a>
+        <img id="soft_2" src="soft_2.png" style="position: absolute; top: 27%; left: 38.8%;" onmouseover='this.src="soft_2_2.png"' onmouseout='this.src="soft_2.png"' onclick="alert('준비중');" />
+        <img id="soft_3" src="soft_3.png" style="position: absolute; top: 31.5%; left: 38.8%;" onmouseover='this.src="soft_3_2.png"' onmouseout='this.src="soft_3.png"' onclick="alert('준비중');" />
+        <img id="soft_4" src="soft_4.png" style="position: absolute; top: 36%; left: 38.8%;" onmouseover='this.src="etc_2.png"' onmouseout='this.src="soft_4.png"' onclick="alert('준비중');" />
+    </div>
+    <div id="sub_media" style="display: none;" onmouseout="close_media();">
+        <a href="sub_media_mix_1.html"><img id="media_1" src="media_1.png" style="position: absolute; top: 22.5%; left: 55.8%;" onmouseover='this.src="media_1_2.png"' onmouseout='this.src="media_1.png"' /> </a>
+        <img id="media_2" src="media_2.png" style="position: absolute; top: 27%; left: 55.8%;" onmouseover='this.src="media_2_2.png"' onmouseout='this.src="media_2.png"' onclick="alert('준비중');" />
+        <a href="sub_media_etc.html"><img id="media_3" src="media_3.png" style="position: absolute; top: 31.5%; left: 55.8%;" onmouseover='this.src="media_3_2.png"' onmouseout='this.src="media_3.png"' /></a>
+    </div>
+    <div>
+        <a href="sub_soft.html"><img src="soft_sub_1_2.png" style="position: absolute; top: 28%; left: 9.8%;" /></a>
+        <img src="soft_sub_2.png" style="position: absolute; top: 35%; left: 9.8%" onclick="alert('준비중');" />
+        <img src="soft_sub_3.png" style="position: absolute; top: 42%; left: 9.8%" onclick="alert('준비중');" />
+        <img src="soft_sub_4.png" style="position: absolute; top: 49%; left: 9.8%" onclick="alert('준비중');" />
+    </div>
+    <!--
+        <footer id="main_footer">
+        Copyright@ Hahmhyeri
+    </footer>
+    -->
+
+
+
+
+</body>
+</html>
