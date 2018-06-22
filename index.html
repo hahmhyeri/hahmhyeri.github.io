@@ -1,43 +1,230 @@
 ﻿<!DOCTYPE html>
-<html >
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
-  <title></title>
-      <link rel="stylesheet" href="style.css"> 
-</head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Gugi|Nanum+Gothic|Nanum+Myeongjo" rel="stylesheet"> <!-- 웹폰트 설정-->
+    <link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet"> <!-- 웹폰트 설정-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
+
+    <style>
+        .menu { /* 메뉴 디자인 설정*/
+            font-family: 'Kavivanar', cursive;
+            color: white;
+            font-size: 20px;
+        }
+
+
+        table {
+   
+            font-family: 'Permanent Marker', cursive;
+            font-size: 15pt;
+            border-collapse: collapse;
+            z-index: 100;
+          
+            left: 500px;
+            border-color: white;
+            
+        }
+
+   
+
+        
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $('#img_home').hover(function () {
+                $(this).attr("src", "img_home2.png");
+                $("#img_heart").animate({ left: "387px" });
+            }, function () {
+                $(this).attr("src", "img_home.png");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#img_soft').hover(function () {
+                $(this).attr("src", "img_soft2.png");
+                $("#img_heart").animate({ left: "642px" });
+            }, function () {
+                $(this).attr("src", "img_soft.png");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#img_media').hover(function () {
+                $(this).attr("src", "img_media2.png");
+                $("#img_heart").animate({ left: "903px" });
+            }, function () {
+                $(this).attr("src", "img_media.png");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#img_etc').hover(function () {
+                $(this).attr("src", "img_etc2.png");
+                $("#img_heart").animate({ left: "1131px" });
+            }, function () {
+                $(this).attr("src", "img_etc.png");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#showbutton').mousedown(function () {
+                $(table).css({ "display": "block" });
+           });
+        })
+    </script>
+
+
+    <script language="javascript">
+        /* 자바 스크립트 함수 작성 */
+
+        function open_soft() { /* 소프트웨어 서브 메뉴를 여는 함수 */
+            document.getElementById("sub_soft").style.display = "block";
+            /*sub_soft 를 가져와서 스타일을 'block'으로 변경*/
+        }
+
+        function close_soft() { /*소프트웨어 서브 메뉴를 닫는 함수*/
+            var ex = document.getElementById("sub_soft"); /* sub_soft를 ex 변수에 저장한다 */
+            if (ex.contains(event.toElement) == false) { /* 마우스가 sub_soft에 없으면 */
+                document.getElementById("sub_soft").style.display = "none";
+                /* display를 none으로 변경, 안 보이게 해 줌 */
+            }
+        }
+
+        function open_media() { /* 미디어 서브 메뉴를 여는 함수 */
+            document.getElementById("sub_media").style.display = "block";
+            /* sub_media를 가져와서 스타일을 'block'으로 변경*/
+        }
+
+        function close_media() {
+            /* 미디어 서브 메뉴를 닫는 함수 (소프트웨어 서브 메뉴를 닫는 함수와 똑같은 기능이므로 설명 생략) */
+            var ex = document.getElementById("sub_media");
+            if (ex.contains(event.toElement) == false) {
+                document.getElementById("sub_media").style.display = "none";
+            }
+
+        }
+    </script>
+    <title></title>
+
+
+
+</head> 
 <body>
-  <section class='section'>
-    <div class='masthead-image' id='master-container'>
-        <div class='content center'>
-            <h1 id='master'>
-              <div>Hello</div>
-              <div> I'm </div>
-              <div id='master-container-scroller'>
-                <div class='master-container-scroller_item'>
-                  <a class='cta-link' href='#'>Hahm Hyeri</a>
-                </div>
-                <div class='master-container-scroller_item'>
-                  <a class='cta-link' href='#'>22</a>
-                </div>
-                <div class='master-container-scroller_item'>
-                  <a class='cta-link' href='#'>in KWU</a>
-                </div>
-                <div class='master-container-scroller_item'>
-                  <a class='cta-link' href='#'>junior</a>
-                </div>
-                <div class='master-container-scroller_item'>
-                  <a class='cta-link' href='#'>software</a>
-                </div>
-                <div class='master-container-scroller_item'>
-                  <a class='cta-link' href='#'>media</a>.
-                </div>
-            </h1>
-        </div>
-    </div>
-</section>
-  
-    <script src="index.js"></script>
+    <center>
+        <img src="img_banner.png"> <!-- 홈페이지 상단 이미지 -->
+    </center>
 
+    <div class="menu">
+        <!-- 상단바 메뉴 -->
+        <!-- 모든 메뉴는 마우스 오버하면 onmouseover, onmouseout 함수를 이용해 검은색으로 이미지를 변경-->
+        <a href="index.html"> <img id="img_home" src="img_home.png" style="position: absolute; top: 137px; left: 361px;" /></a>
+        <a onmousedown="open_soft();"><img id="img_soft" style="position: absolute; top: 137px; left: 599px;" src="img_soft.png" /></a>
+        <!-- 마우스로 software를 클릭시 software 서브 메뉴가 열림-->
+        <a onmousedown="open_media();"><img id="img_media" style="position: absolute; top: 137px; left: 875px;" src="img_media.png" /></a>
+        <!-- 마우스로 media를 클릭시 media 서브 메뉴가 열림-->
+        <a href="etc.html"><img id="img_etc" style="position: absolute; top: 137px; left: 1120px;" src="img_etc.png" /></a>
+    </div>
+    <!-- 3차때 하트 이미지를 마우스가 가리키는 메뉴로 이동하는 애니메이션 효과 주기 25.2-->
+    <img id="img_heart" style="position: absolute; left: 387px; top: 112px;" src="img_heart.png" />
+    <!-- 3차때 jquery $().fadeToggle로 메뉴 서서히 사라지게 하기-->
+    <!-- 소프트웨어 서브 메뉴, 마우스가 서브 메뉴 밖으로 나가면 서브 메뉴 사라짐-->
+    <div id="sub_soft" style="display: none;" onmouseout="close_soft();">
+        <!-- 소프트웨어 서브 메뉴의 각 요소들도 마우스 오버시 이미지를 변경해 줌-->
+        <a href="sub_soft.html"><img id="soft_1" src="soft_1.png" style="position: absolute; top: 170px; left: 596px;" onmouseover='this.src="soft_1_2.png"' onmouseout='this.src="soft_1.png"' /></a>
+        <img id="soft_2" src="soft_2.png" style="position: absolute; top: 205px; left: 596px;" onmouseover='this.src="soft_2_2.png"' onmouseout='this.src="soft_2.png"' onclick="alert('준비중');" />
+        <img id="soft_3" src="soft_3.png" style="position: absolute; top: 240px; left: 596px;" onmouseover='this.src="soft_3_2.png"' onmouseout='this.src="soft_3.png"' onclick="alert('준비중');" />
+        <img id="soft_4" src="soft_4.png" style="position: absolute; top: 275px; left: 596px;" onmouseover='this.src="etc_2.png"' onmouseout='this.src="soft_4.png"' onclick="alert('준비중');" />
+    </div>
+    <!-- 미디어 서브 메뉴-->
+    <!-- 소프트웨어 서브 메뉴와 똑같은 기능-->
+    <div id="sub_media" style="display: none;" onmouseout="close_media();">
+        <a href="sub_media_mix_1.html"><img id="media_1" src="media_1.png" style="position: absolute; top: 170px; left: 857px;" onmouseover='this.src="media_1_2.png"' onmouseout='this.src="media_1.png"' /> </a>
+        <img id="media_2" src="media_2.png" style="position: absolute; top: 205px; left: 857px;" onmouseover='this.src="media_2_2.png"' onmouseout='this.src="media_2.png"' onclick="alert('준비중');" />
+        <a href="sub_media_etc.html"><img id="media_3" src="media_3.png" style="position: absolute; top: 240px; left: 857px;" onmouseover='this.src="media_3_2.png"' onmouseout='this.src="media_3.png"' /></a>
+    </div>
+    <!-- iframe 태그를 사용해 다른 html 문서를 보여줌 -->
+    <center><iframe src="new.html" width="100%" height="200px" frameborder="0" style="margin-top:5%;"></iframe></center>
+    <center>
+        <img src="show_btn.png" id="showbutton" style="margin-top: 0px;" />
+    </center>
+    <!-- contact 할 수 있는 요소, 중앙 정렬으로 설정-->
+
+
+    <center>
+        <table id="june" border="2" cellpadding="15" width="33%">
+            <caption align="center" style="font-size: 30px;">June</caption>
+            <tr>
+                <th style="color:red;">sun</th>
+                <th>mon</th>
+                <th>tue</th>
+                <th>wed</th>
+                <th>thu</th>
+                <th>fri</th>
+                <th>sat</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>1</th>
+                <th>2</th>
+            </tr>
+            <tr>
+                <th style="color:red;">3</th>
+                <th>4</th>
+                <th>5</th>
+                <th style="color:red;">6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+            </tr>
+            <tr>
+                <th style="color:red;">10</th>
+                <th>11</th>
+                <th>12</th>
+                <th stle="color:red;">13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>16</th>
+            </tr>
+            <tr>
+                <th style="color:red;">17</th>
+                <th>18</th>
+                <th>19</th>
+                <th>20</th>
+                <th>21</th>
+                <th>22</th>
+                <th>23</th>
+            </tr>
+            <tr>
+                <th style="color:red;">24</th>
+                <th>25</th>
+                <th>26</th>
+                <th>27</th>
+                <th>28</th>
+                <th>29</th>
+                <th>30</th>
+            </tr>
+        </table>
+
+    </center>
+    <center style="margin-top: 3%;">
+        <img src="img_contact.png" />
+        &nbsp; &nbsp;
+        <!-- 각 요소들은 클릭하면 해당 페이지로 이동할 수 있게 함, 이메일의 경우 바로 이메일을 보낼 수 있게 함-->
+        <a href="https://www.facebook.com/yhyerij" target="_blank"><img src="img_face.png" /></a>
+        &nbsp; &nbsp;
+        <a href="http://www.instagram.com/ha_merry_" target="_blank"><img src="img_insta.png" /></a>
+        &nbsp; &nbsp;
+        <a href="mailto:hamerry1@gmail.com"><img src="img_mail.png" /></a>
+    </center>
 </body>
 </html>
