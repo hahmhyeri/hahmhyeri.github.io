@@ -6,7 +6,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Gugi|Nanum+Gothic|Nanum+Myeongjo|Hi+Melody" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet">
-    
+
     <style>
         .menu {
             font-family: 'Kavivanar', cursive;
@@ -29,8 +29,45 @@
             border: solid 0 pink;
             height: 30px;
         }
-
     </style>
+    <script>
+        $(document).ready(function () {
+            $('#img_home').hover(function () {
+                $(this).attr("src", "img_home2.png");
+                $("#img_heart").animate({ left: "387px" });
+            }, function () {
+                $(this).attr("src", "img_home.png");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#img_soft').hover(function () {
+                $(this).attr("src", "img_soft2.png");
+                $("#img_heart").animate({ left: "642px" });
+            }, function () {
+                $(this).attr("src", "img_soft.png");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#img_media').hover(function () {
+                $(this).attr("src", "img_media2.png");
+                $("#img_heart").animate({ left: "903px" });
+            }, function () {
+                $(this).attr("src", "img_media.png");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#img_etc').hover(function () {
+                $(this).attr("src", "img_etc2.png");
+                $("#img_heart").animate({ left: "1131px" });
+            }, function () {
+                $(this).attr("src", "img_etc.png");
+            });
+        });
+    </script>
+
     <script language="javascript">
 
         function open_soft() {
@@ -69,38 +106,46 @@
     <center>
         <img src="img_banner.png">
     </center>
-
+    <!-- canvas로 사각형 프레임, 점선은 cadetblue, 배경색은 aliceblue로 설정-->
     <canvas width="1000" height="510" align="center" style="border: 2px dashed cadetblue; margin-top: 5%; margin-left: 17.3%; background-color:aliceblue">  </canvas>
 
     <div class="menu">
-        <a href="home.html"> <img id="img_home" src="img_home.png" style="position: absolute; top: 18%; left: 23.5%" onmouseover='this.src="img_home2.png"' onmouseout='this.src="img_home.png"' /></a>
-        <a onmousedown="open_soft();"><img id="img_soft" style="position: absolute; top: 18%; left: 39%;" src="img_soft.png" onmouseover='this.src="img_soft2.png"' onmouseout='this.src="img_soft.png"' /></a>
-        <a onmousedown="open_media();"><img id="img_media" style="position: absolute; top: 18%; left: 57%;" src="img_media.png" onmouseover='this.src="img_media2.png"' onmouseout='this.src="img_media.png"' /></a>
-        <a href="etc.html"><img id="img_etc" style="position: absolute; top: 18%; left: 72.9%;" src="img_etc.png" onmouseover='this.src="img_etc2.png"' onmouseout='this.src="img_etc.png"' /></a>
+        <a href="index.html"> <img id="img_home" src="img_home.png" style="position: absolute; top: 137px; left: 361px;" /></a>
+        <a onmousedown="open_soft();"><img id="img_soft" style="position: absolute; top: 137px; left: 599px;" src="img_soft.png" /></a>
+        <a onmousedown="open_media();"><img id="img_media" style="position: absolute; top: 137px; left: 875px;" src="img_media.png" /></a>
+        <a href="etc.html"><img id="img_etc" style="position: absolute; top: 137px; left: 1120px;" src="img_etc.png" /></a>
     </div>
-    <img id="img_heart" style="position: absolute; left: 73.7%; top: 112px;" src="img_heart.png" />
-    
+    <img id="img_heart" style="position: absolute; left: 1131px; top: 112px;" src="img_heart.png" />
+    <!-- 폼 화면 폼 이름은 frm1로 줌-->
     <form name="frm1">
-    <div style="position: absolute; top : 34.5%; left : 30%; font-family: 'Gugi', culsive; font-size: 15px; border-width: 2px; border: 2px solid pink; background-color: pink; color : white;" id="memo" align="center"> &nbsp;이름 &nbsp; </div>
-    <input type="text" autofocus placeholder="이름" required maxlength="10" style="position:absolute; top: 34.7%; left : 34%;" id="nametext"/>
-    <div style="position: absolute; top : 39.5%; left : 30%; font-family: 'Gugi', culsive; font-size: 15px; border-width: 2px; border: 2px solid pink; background-color: pink; color : white;"> &nbsp;제목 &nbsp; </div>
-    <textarea rows="1" cols="67" style="position: absolute; top: 39.7%; left : 34%"></textarea>
-    <textarea class="txt" rows="20" cols="85" style="position: absolute; top: 44.5%; left: 34%;"></textarea>
-    <input type="button" value="중복확인" class="button" style="position: absolute; top: 34.3%; left: 45%;" onclick="check_empty();" />
-    <input type="button" value="게시" class="button" style="top: 39.2%; left: 64%;" />
+        <!-- 이름, 박스로 감싸 줌 핑크색 배경화면을 글씨 색은 흰 색-->
+        <div style="position: absolute; top : 34.5%; left : 30%; font-family: 'Gugi', culsive; font-size: 15px; border-width: 2px; border: 2px solid pink; background-color: pink; color : white;" id="memo" align="center"> &nbsp;이름 &nbsp; </div>
+        <!-- 이름 입력 란-->
+        <!-- 이름을 미기입하고 중복확인을 누를 시 '이름을 입력하세요'라는 알림 발생, 최대 10자까지 적을 수 있음-->
+        <input type="text" autofocus placeholder="이름" required maxlength="10" style="position:absolute; top: 34.7%; left : 34%;" id="nametext" />
+        <!-- 제목, 박스로 감싸 줌 -->
+        <div style="position: absolute; top : 39.5%; left : 30%; font-family: 'Gugi', culsive; font-size: 15px; border-width: 2px; border: 2px solid pink; background-color: pink; color : white;"> &nbsp;제목 &nbsp; </div>
+        <!-- textarea태그를 통해 제목 입력 란을 만들어 줌-->
+        <textarea rows="1" cols="67" style="position: absolute; top: 39.7%; left : 34%"></textarea>
+        <!-- 내용 입력란 -->
+        <textarea class="txt" rows="20" cols="85" style="position: absolute; top: 44.5%; left: 34%;"></textarea>
+        <!-- 중복확인 버튼, 이름을 미기입하고 누를 경우 check_empty() 이벤트 발생-->
+        <input type="button" value="중복확인" class="button" style="position: absolute; top: 34.3%; left: 45%;" onclick="check_empty();" />
+        <!-- 등록 버튼-->
+        <input type="button" value="게시" class="button" style="top: 39.2%; left: 64%;" />
     </form>
 
     <!-- 3차때 jquery $().fadeToggle로 메뉴 서서히 사라지게 하기-->
     <div id="sub_soft" style="display: none;" onmouseout="close_soft();">
-        <a href="sub_soft.html"><img id="soft_1" src="soft_1.png" style="position: absolute; top: 22.5%; left: 38.8%;" onmouseover='this.src="soft_1_2.png"' onmouseout='this.src="soft_1.png"' /></a>
-        <img id="soft_2" src="soft_2.png" style="position: absolute; top: 27%; left: 38.8%;" onmouseover='this.src="soft_2_2.png"' onmouseout='this.src="soft_2.png"' onclick="alert('준비중');" />
-        <img id="soft_3" src="soft_3.png" style="position: absolute; top: 31.5%; left: 38.8%;" onmouseover='this.src="soft_3_2.png"' onmouseout='this.src="soft_3.png"' onclick="alert('준비중');" />
-        <img id="soft_4" src="soft_4.png" style="position: absolute; top: 36%; left: 38.8%;" onmouseover='this.src="etc_2.png"' onmouseout='this.src="soft_4.png"' onclick="alert('준비중');" />
+        <a href="sub_soft.html"><img id="soft_1" src="soft_1.png" style="position: absolute; top: 170px; left: 596px;" onmouseover='this.src="soft_1_2.png"' onmouseout='this.src="soft_1.png"' /></a>
+        <img id="soft_2" src="soft_2.png" style="position: absolute; top: 205px; left: 596px;" onmouseover='this.src="soft_2_2.png"' onmouseout='this.src="soft_2.png"' onclick="alert('준비중');" />
+        <img id="soft_3" src="soft_3.png" style="position: absolute; top: 240px; left: 596px;" onmouseover='this.src="soft_3_2.png"' onmouseout='this.src="soft_3.png"' onclick="alert('준비중');" />
+        <img id="soft_4" src="soft_4.png" style="position: absolute; top: 275px; left: 596px;" onmouseover='this.src="etc_2.png"' onmouseout='this.src="soft_4.png"' onclick="alert('준비중');" />
     </div>
     <div id="sub_media" style="display: none;" onmouseout="close_media();">
-        <a href="sub_media_mix_1.html"><img id="media_1" src="media_1.png" style="position: absolute; top: 22.5%; left: 55.8%;" onmouseover='this.src="media_1_2.png"' onmouseout='this.src="media_1.png"' /> </a>
-        <img id="media_2" src="media_2.png" style="position: absolute; top: 27%; left: 55.8%;" onmouseover='this.src="media_2_2.png"' onmouseout='this.src="media_2.png"' onclick="alert('준비중');" />
-        <a href="sub_media_etc.html"><img id="media_3" src="media_3.png" style="position: absolute; top: 31.5%; left: 55.8%;" onmouseover='this.src="media_3_2.png"' onmouseout='this.src="media_3.png"' /></a>
+        <a href="sub_media_mix_1.html"><img id="media_1" src="media_1.png" style="position: absolute; top: 170px; left: 857px;" onmouseover='this.src="media_1_2.png"' onmouseout='this.src="media_1.png"' /> </a>
+        <img id="media_2" src="media_2.png" style="position: absolute; top: 205px; left: 857px;" onmouseover='this.src="media_2_2.png"' onmouseout='this.src="media_2.png"' onclick="alert('준비중');" />
+        <a href="sub_media_etc.html"><img id="media_3" src="media_3.png" style="position: absolute; top: 240px; left: 857px;" onmouseover='this.src="media_3_2.png"' onmouseout='this.src="media_3.png"' /></a>
     </div>
 
 

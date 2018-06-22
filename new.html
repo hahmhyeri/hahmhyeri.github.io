@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <style>
+        div {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 65px;
+        }
+
+        center {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function fadeSlide() { // fadeSlide 함수
+
+            $('#num_1').fadeToggle(3000, function () { // div영역들은 각각 3초동안 보여주고 사라지게 함
+                $('#num_2').fadeToggle(3000, function () { 
+                    $('#num_3').fadeToggle(3000, function () {
+                        $('#num_4').fadeToggle(3000, function () {
+                            $('#num_5').fadeToggle(3000, function () {
+                            });
+                        });
+                    });
+                });
+            });
+
+        }
+        $(document).ready(function () {
+
+            fadeSlide(); // 함수 호출
+            setInterval(fadeSlide, 12000); // 12초후 슬라이드가 반복되도록 설정
+
+        })
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+    <div id="num_1" style=" position: absolute; width: 99%; height: 150px; background-color: lavenderblush; display: none;"><center>Hyeri</center></div>
+    <div id="num_2" style="position: absolute; width: 99%; height: 150px; background-color: palegreen; display: none;"><center>Kwangwoon Univ.</center></div>
+    <div id="num_3" style="position: absolute; width: 99%; height: 150px; background-color:lemonchiffon; display: none;"><center>22</center></div>
+    <div id="num_4" style="position: absolute; width: 99%; height: 150px; background-color: lavender; display: none;"><center>Software</center></div>
+    <div id="num_5" style="position: absolute; width: 99%; height: 150px; background-color:paleturquoise; display: none;"><center>School Ambassador</center></div>
+
+
+</body>
+</html>

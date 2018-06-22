@@ -6,7 +6,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Gugi|Nanum+Gothic|Nanum+Myeongjo|Hi+Melody" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet">
-    
+    <link rel="stylesheet" href="colorbox.css" />
+    <script src="jquery.colorbox.js"></script>
     <style>
         .menu {
             font-family: 'Kavivanar', cursive;
@@ -37,6 +38,53 @@
         */
 
     </style>
+
+    <script>
+        $(document).ready(function () {
+            $('#img_home').hover(function () {
+                $(this).attr("src", "img_home2.png");
+                $("#img_heart").animate({ left: "387px" });
+            }, function () {
+                $(this).attr("src", "img_home.png");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#img_soft').hover(function () {
+                $(this).attr("src", "img_soft2.png");
+                $("#img_heart").animate({ left: "642px" });
+            }, function () {
+                $(this).attr("src", "img_soft.png");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#img_media').hover(function () {
+                $(this).attr("src", "img_media2.png");
+                $("#img_heart").animate({ left: "903px" });
+            }, function () {
+                $(this).attr("src", "img_media.png");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#img_etc').hover(function () {
+                $(this).attr("src", "img_etc2.png");
+                $("#img_heart").animate({ left: "1131px" });
+            }, function () {
+                $(this).attr("src", "img_etc.png");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#info_a').colorbox();
+            $('#info_b').colorbox();
+
+
+        })
+    </script>
+
+
     <script language="javascript">
 
         function open_soft() {
@@ -69,35 +117,39 @@
     <center>
         <img src="img_banner.png">
     </center>
-
+    <!-- 사각형 프레임 주기 (검은색 2px solid)-->
     <canvas width="1000" height="510" align="center" style="border: 2px solid  black; margin-top: 5%; margin-left: 17.3%;">  </canvas>
 
     <div class="menu">
-        <a href="home.html"> <img id="img_home" src="img_home.png" style="position: absolute; top: 18%; left: 23.5%" onmouseover='this.src="img_home2.png"' onmouseout='this.src="img_home.png"'/></a>
-        <a onmousedown="open_soft();"><img id="img_soft" style="position: absolute; top: 18%; left: 39%;" src="img_soft.png" onmouseover='this.src="img_soft2.png"' onmouseout='this.src="img_soft.png"'/></a>
-        <a onmousedown="open_media();"><img id="img_media" style="position: absolute; top: 18%; left: 57%;" src="img_media.png" onmouseover='this.src="img_media2.png"' onmouseout='this.src="img_media.png"'/></a>
-        <a href="etc.html"><img id="img_etc" style="position: absolute; top: 18%; left: 72.9%;" src="img_etc.png" onmouseover='this.src="img_etc2.png"' onmouseout='this.src="img_etc.png"'/></a>
+        <a href="index.html"> <img id="img_home" src="img_home.png" style="position: absolute; top: 137px; left: 361px;" /></a>
+        <a onmousedown="open_soft();"><img id="img_soft" style="position: absolute; top: 137px; left: 599px;" src="img_soft.png" /></a>
+        <a onmousedown="open_media();"><img id="img_media" style="position: absolute; top: 137px; left: 875px;" src="img_media.png" /></a>
+        <a href="etc.html"><img id="img_etc" style="position: absolute; top: 137px; left: 1120px;" src="img_etc.png" /></a>
     </div>
-    <img id="img_heart" style="position: absolute; left: 41.7%; top: 112px;" src="img_heart.png" />
+    <img id="img_heart" style="position: absolute; left: 642px; top: 112px;" src="img_heart.png" />
 
     <!-- 아래 이미지 클릭시 jquery의 Lightbox를 통해 정보를 보여줄 예정 (현재는 파일 다운로드 > 프로젝트에 사용된 언어, 만든 날짜, 프로젝트 내용, 맡은 역할 등) -->
-    <a href="http://attach.mail.daum.net/bigfile/v1/urls/d/3lrasB2L1kTv7MM0yta-Wy1T_wo/8P6hCjhy2JZVDBs1NaEl7g"><img src="project_b_1.png" onmouseover='this.src="project_b_2.png"' onmouseout='this.src="project_b_1.png"' style="position: absolute; left: 20%; top: 28%; width:200px; height: auto;" /> </a>
+    <!-- software의 항목들 이미지 -->
+    <!-- 마우스 오버시 간단한 프로젝트 설명(프로젝트 종류, 사용 프로그래밍 언어)을 보여주는 이미지로 변경-->
+    <a id ="info_b" href="b_info.png"><img src="project_b_1.png" onmouseover='this.src="project_b_2.png"' onmouseout='this.src="project_b_1.png"' style="position: absolute; left: 20%; top: 28%; width:200px; height: auto;" /> </a>
     <div style="font-family: 'Nanum Myeongjo', serif; position: absolute; top: 56%; left: 21.1%; text-align: center;">2017-1 고급프로그래밍<br />오늘 뭐 먹지?</div>
-    <a href="http://attach.mail.daum.net/bigfile/v1/urls/d/Aut31hO4HiAkq8OGeckqk5hLQaw/8P6hCjhy2JbGuTXHiwhcRw"><img src="project_a_1.png" onmouseover='this.src="project_a_2.png"' onmouseout='this.src="project_a_1.png"' style="position: absolute; width: 200px; left: 37%; top: 28%;  height: auto;" /></a>
+    <a id="info_a" href="a_info.png"><img src="project_a_1.png" onmouseover='this.src="project_a_2.png"' onmouseout='this.src="project_a_1.png"' style="position: absolute; width: 200px; left: 37%; top: 28%;  height: auto;" /></a>
     <div style="font-family: 'Nanum Myeongjo', serif; position: absolute; top: 56%; left: 37.2%; text-align: center;">2018-1 응용소프트웨어실습<br />Escape from assignment</div>
 
-    <!-- 3차때 jquery $().fadeToggle로 메뉴 서서히 사라지게 하기-->
+    
     <div id="sub_soft" style="display: none;" onmouseout="close_soft();">
-        <a href="sub_soft.html"><img id="soft_1" src="soft_1.png" style="position: absolute; top: 22.5%; left: 38.8%;" onmouseover='this.src="soft_1_2.png"' onmouseout='this.src="soft_1.png"' /></a>
-        <img id="soft_2" src="soft_2.png" style="position: absolute; top: 27%; left: 38.8%;" onmouseover='this.src="soft_2_2.png"' onmouseout='this.src="soft_2.png"' onclick="alert('준비중');" />
-        <img id="soft_3" src="soft_3.png" style="position: absolute; top: 31.5%; left: 38.8%;" onmouseover='this.src="soft_3_2.png"' onmouseout='this.src="soft_3.png"' onclick="alert('준비중');" />
-        <img id="soft_4" src="soft_4.png" style="position: absolute; top: 36%; left: 38.8%;" onmouseover='this.src="etc_2.png"' onmouseout='this.src="soft_4.png"' onclick="alert('준비중');" />
+        <a href="sub_soft.html"><img id="soft_1" src="soft_1.png" style="position: absolute; top: 170px; left: 596px;" onmouseover='this.src="soft_1_2.png"' onmouseout='this.src="soft_1.png"' /></a>
+        <img id="soft_2" src="soft_2.png" style="position: absolute; top: 205px; left: 596px;" onmouseover='this.src="soft_2_2.png"' onmouseout='this.src="soft_2.png"' onclick="alert('준비중');" />
+        <img id="soft_3" src="soft_3.png" style="position: absolute; top: 240px; left: 596px;" onmouseover='this.src="soft_3_2.png"' onmouseout='this.src="soft_3.png"' onclick="alert('준비중');" />
+        <img id="soft_4" src="soft_4.png" style="position: absolute; top: 275px; left: 596px;" onmouseover='this.src="etc_2.png"' onmouseout='this.src="soft_4.png"' onclick="alert('준비중');" />
     </div>
     <div id="sub_media" style="display: none;" onmouseout="close_media();">
-        <a href="sub_media_mix_1.html"><img id="media_1" src="media_1.png" style="position: absolute; top: 22.5%; left: 55.8%;" onmouseover='this.src="media_1_2.png"' onmouseout='this.src="media_1.png"' /> </a>
-        <img id="media_2" src="media_2.png" style="position: absolute; top: 27%; left: 55.8%;" onmouseover='this.src="media_2_2.png"' onmouseout='this.src="media_2.png"' onclick="alert('준비중');" />
-        <a href="sub_media_etc.html"><img id="media_3" src="media_3.png" style="position: absolute; top: 31.5%; left: 55.8%;" onmouseover='this.src="media_3_2.png"' onmouseout='this.src="media_3.png"' /></a>
+        <a href="sub_media_mix_1.html"><img id="media_1" src="media_1.png" style="position: absolute; top: 170px; left: 857px;" onmouseover='this.src="media_1_2.png"' onmouseout='this.src="media_1.png"' /> </a>
+        <img id="media_2" src="media_2.png" style="position: absolute; top: 205px; left: 857px;" onmouseover='this.src="media_2_2.png"' onmouseout='this.src="media_2.png"' onclick="alert('준비중');" />
+        <a href="sub_media_etc.html"><img id="media_3" src="media_3.png" style="position: absolute; top: 240px; left: 857px;" onmouseover='this.src="media_3_2.png"' onmouseout='this.src="media_3.png"' /></a>
     </div>
+    <!-- 사각형 캔버스 왼쪽에 위치한 현재 게시판 상태 (현재 있는 게시판을 노란색으로 표시-->
+    <!-- 준비가 된 c/c++/c# 메뉴를 제외한 나머지 메뉴들은 클릭시 준비중 이라는 알림창을 뜨게 함-->
     <div>
         <a href="sub_soft.html"><img src="soft_sub_1_2.png" style="position: absolute; top: 28%; left: 9.8%;" /></a>
         <img src="soft_sub_2.png" style="position: absolute; top: 35%; left: 9.8%" onclick="alert('준비중');" />

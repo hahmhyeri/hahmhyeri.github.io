@@ -23,8 +23,8 @@
 
         #list {
             position: absolute;
-            top: 23%;
-            left: 13%;
+            top: 175px;
+            left: 200px;
         }
 
 
@@ -44,6 +44,45 @@
         */
 
     </style>
+    <script>
+        $(document).ready(function () {
+            $('#img_home').hover(function () {
+                $(this).attr("src", "img_home2.png");
+                $("#img_heart").animate({ left: "387px" });
+            }, function () {
+                $(this).attr("src", "img_home.png");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#img_soft').hover(function () {
+                $(this).attr("src", "img_soft2.png");
+                $("#img_heart").animate({ left: "642px" });
+            }, function () {
+                $(this).attr("src", "img_soft.png");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#img_media').hover(function () {
+                $(this).attr("src", "img_media2.png");
+                $("#img_heart").animate({ left: "903px" });
+            }, function () {
+                $(this).attr("src", "img_media.png");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#img_etc').hover(function () {
+                $(this).attr("src", "img_etc2.png");
+                $("#img_heart").animate({ left: "1131px" });
+            }, function () {
+                $(this).attr("src", "img_etc.png");
+            });
+        });
+    </script>
+
+
     <script language="javascript">
 
         function open_soft() {
@@ -77,25 +116,33 @@
     <center>
         <img src="img_banner.png">
     </center>
-    <canvas width="1000" height="510" align="center" style="border: 2px solid  black; position: absolute; margin-top: 5%; margin-left: 17.3%; ">  </canvas>
+    <center>
+        <div align="center" style="border: 2px solid black; margin-top: 5%; width: 1000px; height: 510px;">
+            <center style="font-family: 'Gugi', cursive; ">
+                <iframe style="text-align: center; margin-top: 5%;" width="560" height="315" src="https://www.youtube.com/embed/FhdSx5GqGs4?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <p><span style="font-size: 30px; border: hidden; background-color: pink; color:white;"> 비에이피(B.A.P) - HANDS UP </span></p>
+                <p style="font-size: 20px;"> 업로드일: 2018.01.27</p>
+            </center>
+        </div>
+    </center>
     <div class="menu">
-        <a href="home.html"> <img id="img_home" src="img_home.png" style="position: absolute; top: 18%; left: 23.5%" onmouseover='this.src="img_home2.png"' onmouseout='this.src="img_home.png"' /></a>
-        <a onmousedown="open_soft();"><img id="img_soft" style="position: absolute; top: 18%; left: 39%;" src="img_soft.png" onmouseover='this.src="img_soft2.png"' onmouseout='this.src="img_soft.png"' /></a>
-        <a onmousedown="open_media();"><img id="img_media" style="position: absolute; top: 18%; left: 57%;" src="img_media.png" onmouseover='this.src="img_media2.png"' onmouseout='this.src="img_media.png"' /></a>
-        <a href="etc.html"><img id="img_etc" style="position: absolute; top: 18%; left: 72.9%;" src="img_etc.png" onmouseover='this.src="img_etc2.png"' onmouseout='this.src="img_etc.png"' /></a>
+        <a href="index.html"> <img id="img_home" src="img_home.png" style="position: absolute; top: 137px; left: 361px;" /></a>
+        <a onmousedown="open_soft();"><img id="img_soft" style="position: absolute; top: 137px; left: 599px;" src="img_soft.png" /></a>
+        <a onmousedown="open_media();"><img id="img_media" style="position: absolute; top: 137px; left: 875px;" src="img_media.png" /></a>
+        <a href="etc.html"><img id="img_etc" style="position: absolute; top: 137px; left: 1120px;" src="img_etc.png" /></a>
     </div>
-    <img id="img_heart" style="position: absolute; left: 58.8%; top: 112px;" src="img_heart.png" />
+    <img id="img_heart" style="position: absolute; left: 903px; top: 112px;" src="img_heart.png" />
     <!-- 3차때 jquery $().fadeToggle로 메뉴 서서히 사라지게 하기-->
     <div id="sub_soft" style="display: none;" onmouseout="close_soft();">
-        <a href="sub_soft.html"><img id="soft_1" src="soft_1.png" style="position: absolute; top: 22.5%; left: 38.8%;" onmouseover='this.src="soft_1_2.png"' onmouseout='this.src="soft_1.png"' /></a>
-        <img id="soft_2" src="soft_2.png" style="position: absolute; top: 27%; left: 38.8%;" onmouseover='this.src="soft_2_2.png"' onmouseout='this.src="soft_2.png"' onclick="alert('준비중');" />
-        <img id="soft_3" src="soft_3.png" style="position: absolute; top: 31.5%; left: 38.8%;" onmouseover='this.src="soft_3_2.png"' onmouseout='this.src="soft_3.png"' onclick="alert('준비중');" />
-        <img id="soft_4" src="soft_4.png" style="position: absolute; top: 36%; left: 38.8%;" onmouseover='this.src="etc_2.png"' onmouseout='this.src="soft_4.png"' onclick="alert('준비중');" />
+        <a href="sub_soft.html"><img id="soft_1" src="soft_1.png" style="position: absolute; top: 170px; left: 596px;" onmouseover='this.src="soft_1_2.png"' onmouseout='this.src="soft_1.png"' /></a>
+        <img id="soft_2" src="soft_2.png" style="position: absolute; top: 205px; left: 596px;" onmouseover='this.src="soft_2_2.png"' onmouseout='this.src="soft_2.png"' onclick="alert('준비중');" />
+        <img id="soft_3" src="soft_3.png" style="position: absolute; top: 240px; left: 596px;" onmouseover='this.src="soft_3_2.png"' onmouseout='this.src="soft_3.png"' onclick="alert('준비중');" />
+        <img id="soft_4" src="soft_4.png" style="position: absolute; top: 275px; left: 596px;" onmouseover='this.src="etc_2.png"' onmouseout='this.src="soft_4.png"' onclick="alert('준비중');" />
     </div>
     <div id="sub_media" style="display: none;" onmouseout="close_media();">
-        <a href="sub_media_mix_1.html"><img id="media_1" src="media_1.png" style="position: absolute; top: 22.5%; left: 55.8%;" onmouseover='this.src="media_1_2.png"' onmouseout='this.src="media_1.png"' /> </a>
-        <img id="media_2" src="media_2.png" style="position: absolute; top: 27%; left: 55.8%;" onmouseover='this.src="media_2_2.png"' onmouseout='this.src="media_2.png"' onclick="alert('준비중');" />
-        <a href="sub_media_etc.html"><img id="media_3" src="media_3.png" style="position: absolute; top: 31.5%; left: 55.8%;" onmouseover='this.src="media_3_2.png"' onmouseout='this.src="media_3.png"' /></a>
+        <a href="sub_media_mix_1.html"><img id="media_1" src="media_1.png" style="position: absolute; top: 170px; left: 857px;" onmouseover='this.src="media_1_2.png"' onmouseout='this.src="media_1.png"' /> </a>
+        <img id="media_2" src="media_2.png" style="position: absolute; top: 205px; left: 857px;" onmouseover='this.src="media_2_2.png"' onmouseout='this.src="media_2.png"' onclick="alert('준비중');" />
+        <a href="sub_media_etc.html"><img id="media_3" src="media_3.png" style="position: absolute; top: 240px; left: 857px;" onmouseover='this.src="media_3_2.png"' onmouseout='this.src="media_3.png"' /></a>
     </div>
 
     <nav id="list">
@@ -107,10 +154,6 @@
             <dd> <a href="sub_media_mix_3.html" style="text-decoration: none; color: black; font-family: 'Gugi', cursive;"><b>3</b></a></dd>
         </dl>
     </nav>
-    <center style="font-family: 'Gugi', cursive; ">
-        <iframe style="text-align: center; margin-top: 8.5%;" width="560" height="315" src="https://www.youtube.com/embed/FhdSx5GqGs4?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <p><span style="font-size: 30px; border: hidden; background-color: pink; color:white;"> 비에이피(B.A.P) - HANDS UP </span></p>
-        <p style="font-size: 20px;"> 업로드일: 2018.01.27</p>
-    </center>
+    
 </body>
 </html>
